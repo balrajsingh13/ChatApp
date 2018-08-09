@@ -1,0 +1,47 @@
+/* @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css'); */
+
+#left{
+    background: cadetblue;
+    width: 30%;
+    height: 600px;
+    float: left;
+}
+
+#right{
+    background-color: azure;
+    width: 70%;
+    height: 600px;
+    float: right;
+}
+
+ul{
+    list-style-type: none;
+}
+
+#addButton{
+    border-radius: 50%;
+}
+
+#messagedisplay{
+    
+    height: 570px;
+    background-color: azure;
+}
+
+#messageEnter{
+    margin-left: 50px;
+    position: absolute;
+    top:580px;
+}
+
+#enterRoomName{
+    margin-left: 50px;
+    position: relative;
+    top:30px;
+
+}
+
+#list{
+    position: relative;
+    top:50px;
+}

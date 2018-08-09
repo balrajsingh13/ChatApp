@@ -1,0 +1,29 @@
+<div class="container">
+  <div id="left">
+    
+    <div id="enterRoomName">
+      <input type="text" #chatRoomName >
+      <button id="addButton" type="button" (click)="addNewChatroom( chatRoomName.value ) && addNamesInArray( chatRoomName.value )" >+</button>
+    </div>
+    <ul id="list" *ngFor="let channelName of channelsArray">
+      <li><a>{{ channelName }} </a>
+        <button (click)="retreivingChannelSID(channelName)">Get Channel Id</button>
+        <button (click)="subscribeToChannel()">Subscribe</button>
+      </li>
+    </ul>
+  
+  </div>
+
+  <div id="right">
+
+    <div id="messagedisplay">
+      {{ message }}
+    </div>
+
+    <div id="messageEnter">
+      <input type="text" size="110"  #messageBody>
+      <button type="button" (click)="send( messageBody.value )">Send</button>    
+    </div>
+
+  </div>
+</div>
