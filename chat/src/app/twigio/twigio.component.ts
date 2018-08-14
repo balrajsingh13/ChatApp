@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestsService } from '../requests.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-twigio',
@@ -45,18 +46,24 @@ export class TwigioComponent implements OnInit {
     this.channelUniqueName = name;
     this.reqservice.gettingChannelSID(this.channelUniqueName).subscribe(
       (response) => {
-        this.channelUniqueName = response.sid;
+        this.channelUniqueName = "hello"
+        console.log(response);
+        //response.sid;
       }
       ,
       (error) => { console.log(error); }
     );
   }     
   
+  channelUniqueNametoShow: any;
+
   subscribeToChannel(channelUniqueName){
     this.reqservice.joinChannel(channelUniqueName)
     .subscribe(
-      (response) => {console.log(response)},
-      (error) => {console.log(error)}
+      (response) => {console.log(response.unique_name)
+                     this.channelUniqueNametoShow = response.unique_name},
+      (error) => {console.log(error)
+                  console.log("already subscribed");}
     );
   }
 

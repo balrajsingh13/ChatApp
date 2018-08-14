@@ -5,6 +5,14 @@
       <input type="text" #chatRoomName >
       <button id="addButton" type="button" (click)="addNewChatroom( chatRoomName.value ) && addNamesInArray( chatRoomName.value )" >+</button>
     </div>
+
+    <!-- <div id="enterRoomName">
+      <form #formCtrl="ngForm">
+        <input ngControl="passwordCtrl" required>
+        <button [disabled]="!formCtrl.form.valid">Some button</button>
+      </form>
+    </div> -->
+
     <ul id="list" *ngFor="let channelName of channelsArray">
       <li><a>{{ channelName }} </a>
         <button (click)="retreivingChannelSID(channelName)">Get Channel Id</button>
@@ -15,7 +23,7 @@
   </div>
 
   <div id="right">
-
+    Channel Name: {{ channelUniqueNametoShow }}
     <div id="messagedisplay">
       {{ message }}
     </div>
